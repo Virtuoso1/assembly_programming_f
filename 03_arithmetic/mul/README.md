@@ -1,15 +1,5 @@
 # MUL Instruction: Flag Analysis
 
-`mul` performs unsigned multiplication. The result is twice the size of the operands, so the CPU stores it across two registers. The upper half goes in AH, DX, or EDX depending on the operand size.
-
-MUL defines only two flags:
-
-- CF and OF are both set if the upper half of the result is non-zero. This means the product did not fit in the lower half alone.
-- CF and OF are both cleared if the upper half is zero. This means the full product fits in the lower half.
-
-Intel lists SF, ZF, AF, and PF as undefined after `mul`. GDB still displays them, but their values carry no meaning.
-
----
 
 ## Program 1: mul1.asm (8-bit multiplication)
 
